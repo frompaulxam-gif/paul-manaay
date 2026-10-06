@@ -5,8 +5,29 @@ const greeting = intro.querySelector('.greeting');
 const main = document.querySelector('main');
 const skipLink = document.querySelector('.skip-link');
 const replay = document.querySelector('.replay-intro');
+const isOfferRoute = /\/offer(?:\/index\.html)?\/?$/.test(window.location.pathname);
+const isOfferArrival = (isOfferRoute && !window.location.hash) || window.location.hash === '#offer';
+const previousScrollRestoration = history.scrollRestoration;
+let offerPending = isOfferArrival;
+let offerTimer;
 let timers = [];
 let restoreFocus = false;
+function cancelOfferScroll() {
+  if (!offerPending) return;
+  offerPending = false;
+  window.clearTimeout(offerTimer);
+  history.scrollRestoration = previousScrollRestoration;
+}
+function scheduleOfferScroll(immediate) {
+  if (!offerPending) return;
+  window.clearTimeout(offerTimer);
+  offerTimer = window.setTimeout(() => {
+    cancelOfferScroll();
+    const offer = document.querySelector('#offer');
+    offer.scrollIntoView({ behavior: reduceMotion.matches ? 'instant' : 'smooth', block: 'start' });
+    offer.focus({ preventScroll: true });
+  }, immediate ? 0 : 1750); // 850ms curtain reveal, then 900ms to see the homepage.
+}
 function clearTimers() {
   timers.forEach(window.clearTimeout);
   timers = [];
@@ -25,8 +46,10 @@ function finishIntro(immediate = false) {
     timers.push(window.setTimeout(() => { intro.hidden = true; intro.classList.remove('leaving'); }, 850));
   }
   if (restoreFocus) { document.querySelector('.wordmark').focus({ preventScroll: true }); restoreFocus = false; }
+  scheduleOfferScroll(immediate || reduceMotion.matches);
 }
 function playIntro(fromButton = false) {
+  if (fromButton) cancelOfferScroll();
   if (reduceMotion.matches) return;
   clearTimers();
   restoreFocus = fromButton;
@@ -47,22 +70,29 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && !i
 replay.addEventListener('click', () => playIntro(true));
 reduceMotion.addEventListener('change', event => { if (event.matches) finishIntro(true); replay.hidden = event.matches; });
 replay.hidden = reduceMotion.matches;
-const isOfferRoute = /\/offer(?:\/index\.html)?\/?$/.test(window.location.pathname);
-const isOfferArrival = (isOfferRoute && !window.location.hash) || window.location.hash === '#offer';
 if (isOfferArrival) {
-  // The shareable offer is part of the portfolio; open it without the greeting curtain.
-  finishIntro(true);
-  const openOffer = () => requestAnimationFrame(() => {
-    const offer = document.querySelector('#offer');
-    offer.scrollIntoView({ behavior: 'instant', block: 'start' });
-    offer.focus({ preventScroll: true });
+  // Start at the portrait even when this URL is reloaded from the offer section.
+  history.scrollRestoration = 'manual';
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  window.addEventListener('pageshow', () => {
+    if (reduceMotion.matches && offerPending) scheduleOfferScroll(true);
+    else if (offerPending) window.scrollTo({ top: 0, behavior: 'instant' });
+  }, { once: true });
+  // Respect visitors who choose to explore before the automatic scroll begins.
+  const cancelOnManualScroll = () => { if (!main.inert) cancelOfferScroll(); };
+  window.addEventListener('wheel', cancelOnManualScroll, { passive: true });
+  window.addEventListener('touchmove', cancelOnManualScroll, { passive: true });
+  document.addEventListener('keydown', event => {
+    if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) cancelOnManualScroll();
   });
-  // Run after the browser restores its previous scroll position on reload.
-  if (document.readyState === 'complete') openOffer();
-  else window.addEventListener('pageshow', openOffer, { once: true });
-} else {
-  playIntro();
+  document.addEventListener('click', event => {
+    if (event.target.closest('a')) cancelOfferScroll();
+  });
 }
+if (reduceMotion.matches && isOfferArrival) {
+  if (document.readyState === 'complete') finishIntro(true);
+  // Otherwise pageshow above opens the offer without motion or a waiting period.
+} else playIntro();
 
 const previewDialog = document.querySelector('.preview-dialog');
 const dialogImage = previewDialog.querySelector('.preview-dialog-image');

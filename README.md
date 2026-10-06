@@ -28,4 +28,4 @@ Design references: [Dennis Snellenberg](https://dennissnellenberg.com/) for the 
 
 Share https://frompaulxam-gif.github.io/paul-manaay/offer/ to open this portfolio directly at the offer below the contact invitation. The offer describes a free website build and a £20 monthly service: £10 hosting and £10 maintenance/management.
 
-After editing `index.html`, run `node scripts/build-offer.mjs .` to regenerate the matching nested route. Assets remain shared with the homepage. Normal visits keep the greeting animation; direct offer visits skip it and focus the offer section.
+After editing `index.html`, run `node scripts/build-offer.mjs .` to regenerate the matching nested route. Assets remain shared with the homepage. Both normal visits and direct offer visits play the greeting animation. Offer visits reveal the portrait homepage, pause briefly, then smoothly scroll to the offer. Choosing a link or scrolling manually cancels the automatic journey; reduced-motion visitors open directly at the offer.
