@@ -48,12 +48,6 @@ replay.addEventListener('click', () => playIntro(true));
 reduceMotion.addEventListener('change', event => { if (event.matches) finishIntro(true); replay.hidden = event.matches; });
 replay.hidden = reduceMotion.matches;
 playIntro();
-const motionButton = document.querySelector('.motion-toggle');
-motionButton.addEventListener('click', () => {
-  const paused = document.documentElement.classList.toggle('motion-paused');
-  motionButton.setAttribute('aria-pressed', String(paused));
-  motionButton.textContent = paused ? 'Play motion' : 'Pause motion';
-});
 
 const previewDialog = document.querySelector('.preview-dialog');
 const dialogImage = previewDialog.querySelector('.preview-dialog-image');
@@ -176,7 +170,7 @@ document.querySelectorAll('.project').forEach(element => {
       if (userInitiated) label.setAttribute('aria-live', 'polite');
     }
   };
-  const canAutoPlay = () => finePointer.matches && !reduceMotion.matches && !navigator.connection?.saveData && !document.documentElement.classList.contains('motion-paused');
+  const canAutoPlay = () => finePointer.matches && !reduceMotion.matches && !navigator.connection?.saveData;
   cover.addEventListener('pointerenter', () => {
     if (canAutoPlay()) hoverTimer = window.setTimeout(() => gallery.play(), 180);
   });
@@ -220,7 +214,6 @@ previewDialog.addEventListener('close', () => {
 const stopPreviews = () => galleries.forEach(gallery => gallery.stop());
 document.addEventListener('visibilitychange', stopPreviews);
 reduceMotion.addEventListener('change', stopPreviews);
-motionButton.addEventListener('click', stopPreviews);
 
 previewDialog.querySelector('.preview-zoom').addEventListener('click', event => {
   const stage = previewDialog.querySelector('.preview-dialog-stage');

@@ -20,6 +20,6 @@ GitHub Pages serves the root of the `main` branch. `.nojekyll` keeps this a plai
 
 Alródia Café, Triple Down, Moonshine, Super Seamoss, Nutrients93, Venture House, Ventura Tours 360, From Paul, Ventura Solutions and Alródia Jewellery.
 
-The galleries use captures and recordings of the actual websites. The hero uses an AI-edited version of Paul’s supplied portrait. Motion can be paused; reduced motion and touch/keyboard controls are supported.
+The galleries use captures and recordings of the actual websites. The hero uses an AI-edited version of Paul’s supplied portrait. Videos have play/pause controls; reduced motion and touch/keyboard controls are supported.
 
 Design references: [Dennis Snellenberg](https://dennissnellenberg.com/) for the spacious portrait and name treatment, and [eessoo](https://eessoo.co/) for the image-led work index. The implementation is original.
