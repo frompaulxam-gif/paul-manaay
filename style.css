@@ -51,4 +51,4 @@
 @media(max-width:800px){.offer-content{grid-template-columns:1fr;gap:35px;margin-top:38px}.offer-pricing{max-width:640px;width:100%}.offer-message{max-width:580px}.offer-painpoints h4{font-size:22px}}
 @media(max-width:480px){.offer{scroll-margin-top:24px;padding-top:28px}.offer-eyebrow{margin-bottom:22px}.offer-heading h2{font-size:39px}.offer-message{margin-top:22px;font-size:17px}.offer-painpoints li{gap:10px;grid-template-columns:22px 1fr;padding:21px 0}.offer-painpoints h4{font-size:21px}.offer-pricing{padding:25px 22px}}
 
-.offer-exchange{margin:25px 0 32px}.offer-exchange p{font-size:15px;line-height:1.5;color:#555;margin:0 0 12px}.offer-exchange strong{display:block;font-size:clamp(27px,2.4vw,38px);font-weight:400;line-height:1.1;letter-spacing:-.045em}
+.offer-exchange{margin:25px 0 32px}.offer-exchange p{font-size:17px;line-height:1.5;color:#555;margin:0}.offer-exchange h4{font-size:clamp(27px,2.4vw,38px);font-weight:400;line-height:1.1;letter-spacing:-.045em;margin:0 0 14px}
