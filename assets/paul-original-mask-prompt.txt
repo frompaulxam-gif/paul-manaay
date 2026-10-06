@@ -1,0 +1,6 @@
+Use case: background-extraction
+Asset type: transparent alpha mask for the supplied original photograph. The final application will use ONLY your alpha channel on the untouched original photograph, so silhouette alignment is critical.
+Input image: edit target, original square photo 1075 x 1075.
+Primary request: remove all background to REAL TRANSPARENCY, retaining only the man, his hair, ears, neck, entire visible dark shirt, arms, watch, hands and visible trousers.
+Composition/framing: preserve EXACT full original square canvas composition. Output a square image at 1024 x 1024 or higher with every subject boundary in the exact same proportional coordinates as input. Hair top is approximately y=0.325; person extends off bottom edge. Preserve the large empty area above his head.
+Constraints: keep the exact original subject position, scale, pose, silhouette, hair outline, body geometry, clothing outline, hands and bottom-edge crop. Remove buildings, sky, railings, lights, plants and furniture completely including background visible between body parts. No crop, no zoom, no recentering, no newly invented body or clothing, no portrait enhancement, no geometry changes. Do not shift any boundary. Preserve natural anti-aliased hair edges. No opaque background, no checkerboard image, no shadow or halo; actual transparent alpha background.

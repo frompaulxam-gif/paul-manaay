@@ -29,3 +29,7 @@ Design references: [Dennis Snellenberg](https://dennissnellenberg.com/) for the 
 Share https://frompaulxam-gif.github.io/paul-manaay/offer/ to open this portfolio directly at the offer below the contact invitation. The offer describes a free website build and one £20 monthly hosting and maintenance service, covering the hosting provider, software updates, announcements and content adjustments.
 
 After editing `index.html`, run `node scripts/build-offer.mjs .` to regenerate the matching nested route. Assets remain shared with the homepage. Both normal visits and direct offer visits play the greeting animation. Offer visits reveal the portrait homepage, pause briefly, then smoothly scroll to the offer. Choosing a link or scrolling manually cancels the automatic journey; reduced-motion visitors open directly at the offer.
+
+## Original photograph
+
+The hero displays `assets/paul-original.jpg`, an untouched copy of Paul's supplied photograph. `assets/paul-original-mask.png` supplies only the alpha mask used to remove the background; its generated RGB pixels are never displayed. The original face, skin texture, lighting and clothes are preserved over the light grey CSS background. The mask was made with built-in imagegen, with the exact prompt saved beside the asset.
