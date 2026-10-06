@@ -52,3 +52,5 @@
 @media(max-width:480px){.offer{scroll-margin-top:24px;padding-top:28px}.offer-eyebrow{margin-bottom:22px}.offer-heading h2{font-size:39px}.offer-message{margin-top:22px;font-size:17px}.offer-painpoints li{gap:10px;grid-template-columns:22px 1fr;padding:21px 0}.offer-painpoints h4{font-size:21px}.offer-pricing{padding:25px 22px}}
 
 .offer-exchange{margin:25px 0 32px}.offer-exchange p{font-size:17px;line-height:1.5;color:#555;margin:0}.offer-exchange h4{font-size:clamp(27px,2.4vw,38px);font-weight:400;line-height:1.1;letter-spacing:-.045em;margin:0 0 14px}
+
+.offer-monthly{padding:25px 0;border-bottom:1px solid #ccc}.offer-monthly h4{font-size:19px;font-weight:400;margin:0 0 12px}.offer-monthly h4 strong{font-size:clamp(38px,3.5vw,52px);font-weight:400;letter-spacing:-.05em}.offer-monthly p{font-size:15px;line-height:1.5;color:#555;margin:0}.offer-monthly .offer-monthly-label{font-size:18px;color:var(--ink);margin-bottom:8px}
