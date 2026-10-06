@@ -47,16 +47,11 @@
 .offer-monthly>strong{font-size:44px;line-height:1.1;font-weight:400;letter-spacing:-.055em}
 .offer-monthly>strong>span{font-size:18px;letter-spacing:-.025em}
 .offer-monthly p{font-size:14px;line-height:1.5;color:#555;margin:12px 0 0}
-.offer-breakdown{margin:24px 0 30px}
-.offer-breakdown>div+div{margin-top:22px}
-.offer-breakdown dt{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;font-size:15px;line-height:1.5;letter-spacing:-.02em}
-.offer-breakdown strong{font-weight:400;white-space:nowrap}
-.offer-breakdown strong span{font-size:12px;color:#606060}
-.offer-breakdown dd{font-size:14px;line-height:1.5;color:#606060;margin:6px 0 0;max-width:380px}
+.offer-includes{margin:22px 0 30px;font-size:15px;line-height:1.5;color:#606060;max-width:380px}
 .offer-cta{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:54px;padding:16px 18px;background:var(--ink);color:white;font-size:15px;line-height:1.4;transition:background .2s ease}
 .offer-cta:hover{background:#414345}
 .offer-cta>span{font-size:22px}
 .offer-work-link{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding:14px 0 2px;font-size:14px;line-height:1.5}
 .offer-work-link:hover{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:800px){.offer-content{grid-template-columns:1fr;gap:35px;margin-top:38px}.offer-pricing{max-width:640px;width:100%}.offer-message{max-width:580px}.offer-painpoints h4{font-size:22px}}
-@media(max-width:480px){.offer{scroll-margin-top:24px;padding-top:28px}.offer-eyebrow{margin-bottom:22px}.offer-heading h2{font-size:39px}.offer-message{margin-top:22px;font-size:17px}.offer-painpoints li{gap:10px;grid-template-columns:22px 1fr;padding:21px 0}.offer-painpoints h4{font-size:21px}.offer-pricing{padding:25px 22px}.offer-breakdown dt{font-size:14px}}
+@media(max-width:480px){.offer{scroll-margin-top:24px;padding-top:28px}.offer-eyebrow{margin-bottom:22px}.offer-heading h2{font-size:39px}.offer-message{margin-top:22px;font-size:17px}.offer-painpoints li{gap:10px;grid-template-columns:22px 1fr;padding:21px 0}.offer-painpoints h4{font-size:21px}.offer-pricing{padding:25px 22px}}
