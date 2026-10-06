@@ -25,3 +25,38 @@
 
 /* Keep the supporting role clear of the large name in panoramic windows. */
 @media(min-aspect-ratio:5/2){.hero-role{top:16%;font-size:24px;line-height:1.3}}
+
+/* The offer lives below the contact invitation, with a direct /offer/ entry point. */
+.offer{margin-top:clamp(60px,7vw,110px);padding-top:38px;border-top:1px solid var(--line);scroll-margin-top:32px;outline:none}
+.offer-eyebrow{font-size:13px;margin:0 0 26px;color:#656565}
+.offer-heading h2{font-size:clamp(36px,4.5vw,74px);font-weight:400;line-height:1.04;letter-spacing:-.055em;margin:0;max-width:1100px}
+.offer-message{max-width:690px;font-size:clamp(17px,1.55vw,22px);line-height:1.5;margin:25px 0 0;color:#555}
+.offer-content{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(36px,7vw,120px);margin-top:52px;align-items:start}
+.offer h3{font-size:16px;line-height:1.4;font-weight:400;letter-spacing:-.015em;margin:0 0 22px}
+.offer-painpoints{list-style:none;margin:0;padding:0}
+.offer-painpoints li{display:grid;grid-template-columns:28px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.offer-number{font-size:12px;color:#777;line-height:1.9;font-variant-numeric:tabular-nums}
+.offer-painpoints h4{font-size:clamp(20px,1.65vw,25px);font-weight:400;letter-spacing:-.035em;line-height:1.2;margin:0 0 9px}
+.offer-painpoints p{max-width:540px;font-size:15px;line-height:1.5;color:#606060;margin:0}
+.offer-pricing{background:#f2f2ef;padding:clamp(24px,2.5vw,40px)}
+.offer-pricing h3{margin-bottom:28px}
+.offer-build{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;padding-bottom:22px;border-bottom:1px solid #d2d2cf}
+.offer-build>strong{font-size:60px;line-height:1;font-weight:400;letter-spacing:-.07em}
+.offer-build>span{font-size:15px;color:#555}
+.offer-monthly{padding-top:22px}
+.offer-monthly>strong{font-size:44px;line-height:1.1;font-weight:400;letter-spacing:-.055em}
+.offer-monthly>strong>span{font-size:18px;letter-spacing:-.025em}
+.offer-monthly p{font-size:14px;line-height:1.5;color:#555;margin:12px 0 0}
+.offer-breakdown{margin:24px 0 30px}
+.offer-breakdown>div+div{margin-top:22px}
+.offer-breakdown dt{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;font-size:15px;line-height:1.5;letter-spacing:-.02em}
+.offer-breakdown strong{font-weight:400;white-space:nowrap}
+.offer-breakdown strong span{font-size:12px;color:#606060}
+.offer-breakdown dd{font-size:14px;line-height:1.5;color:#606060;margin:6px 0 0;max-width:380px}
+.offer-cta{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:54px;padding:16px 18px;background:var(--ink);color:white;font-size:15px;line-height:1.4;transition:background .2s ease}
+.offer-cta:hover{background:#414345}
+.offer-cta>span{font-size:22px}
+.offer-work-link{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding:14px 0 2px;font-size:14px;line-height:1.5}
+.offer-work-link:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:800px){.offer-content{grid-template-columns:1fr;gap:35px;margin-top:38px}.offer-pricing{max-width:640px;width:100%}.offer-message{max-width:580px}.offer-painpoints h4{font-size:22px}}
+@media(max-width:480px){.offer{scroll-margin-top:24px;padding-top:28px}.offer-eyebrow{margin-bottom:22px}.offer-heading h2{font-size:39px}.offer-message{margin-top:22px;font-size:17px}.offer-painpoints li{gap:10px;grid-template-columns:22px 1fr;padding:21px 0}.offer-painpoints h4{font-size:21px}.offer-pricing{padding:25px 22px}.offer-breakdown dt{font-size:14px}}

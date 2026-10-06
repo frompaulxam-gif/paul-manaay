@@ -23,3 +23,9 @@ Alródia Café, Triple Down, Moonshine, Super Seamoss, Nutrients93, Venture Hous
 The galleries use captures and recordings of the actual websites. The hero uses an AI-edited version of Paul’s supplied portrait. Videos have play/pause controls; reduced motion and touch/keyboard controls are supported.
 
 Design references: [Dennis Snellenberg](https://dennissnellenberg.com/) for the spacious portrait and name treatment, and [eessoo](https://eessoo.co/) for the image-led work index. The implementation is original.
+
+## Website offer
+
+Share https://frompaulxam-gif.github.io/paul-manaay/offer/ to open this portfolio directly at the offer below the contact invitation. The offer describes a free website build and a £20 monthly service: £10 hosting and £10 maintenance/management.
+
+After editing `index.html`, run `node scripts/build-offer.mjs .` to regenerate the matching nested route. Assets remain shared with the homepage. Normal visits keep the greeting animation; direct offer visits skip it and focus the offer section.

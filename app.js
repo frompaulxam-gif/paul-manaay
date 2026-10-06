@@ -47,7 +47,22 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && !i
 replay.addEventListener('click', () => playIntro(true));
 reduceMotion.addEventListener('change', event => { if (event.matches) finishIntro(true); replay.hidden = event.matches; });
 replay.hidden = reduceMotion.matches;
-playIntro();
+const isOfferRoute = /\/offer(?:\/index\.html)?\/?$/.test(window.location.pathname);
+const isOfferArrival = (isOfferRoute && !window.location.hash) || window.location.hash === '#offer';
+if (isOfferArrival) {
+  // The shareable offer is part of the portfolio; open it without the greeting curtain.
+  finishIntro(true);
+  const openOffer = () => requestAnimationFrame(() => {
+    const offer = document.querySelector('#offer');
+    offer.scrollIntoView({ behavior: 'instant', block: 'start' });
+    offer.focus({ preventScroll: true });
+  });
+  // Run after the browser restores its previous scroll position on reload.
+  if (document.readyState === 'complete') openOffer();
+  else window.addEventListener('pageshow', openOffer, { once: true });
+} else {
+  playIntro();
+}
 
 const previewDialog = document.querySelector('.preview-dialog');
 const dialogImage = previewDialog.querySelector('.preview-dialog-image');
